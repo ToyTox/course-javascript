@@ -46,8 +46,6 @@ function returnFnResult(fn) {
   return fn();
 }
 
-returnFnResult(() => 'привет');
-
 /*
  Задание 4:
 
@@ -103,10 +101,6 @@ function sum(a, b) {
 function bindFunction(fn, ...args) {
   return fn.bind(null, ...args);
 }
-
-const newSum = bindFunction(sum, 2, 4);
-
-console.log(newSum());
 
 export {
   returnFirstArgument,
