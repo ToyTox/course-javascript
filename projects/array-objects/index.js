@@ -86,6 +86,13 @@ function upperProps(obj) {
    obj.foo = 2;
    console.log(obj.foo); // 4
  */
-function createProxy(obj) {}
+function createProxy(obj) {
+  const proxyVal = new Proxy(obj, {
+    set(target, prop, value) {
+      return (target[prop] = value ** 2);
+    },
+  });
+  return proxyVal;
+}
 
 export { forEach, map, reduce, upperProps, createProxy };
