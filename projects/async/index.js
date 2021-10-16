@@ -39,7 +39,13 @@ const homeworkContainer = document.querySelector('#app');
  Массив городов пожно получить отправив асинхронный запрос по адресу
  https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json
  */
-function loadTowns() {}
+function loadTowns() {
+  const url = 'https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json';
+  
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data.sort((a, b) => a.name.localeCompare(b.name)));
+}
 
 /*
  Функция должна проверять встречается ли подстрока chunk в строке full
