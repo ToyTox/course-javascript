@@ -31,10 +31,6 @@ function delayPromise(seconds) {
 function loadAndSortTowns() {
   const url = 'https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json';
 
-  // return fetch('https://raw.githubusercontent.com/smelukov/citiesTest/master/cities.json')
-  // .then((response) => response.json())
-  // .then((data) => data.sort((a, b) => a.name.localeCompare(b.name)));
-
   return fetch(url)
     .then((response) => response.json())
     .then((data) => data.sort((a, b) => a.name.localeCompare(b.name)));
