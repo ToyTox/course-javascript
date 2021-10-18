@@ -148,7 +148,22 @@ function deleteTextNodesRecursive(where) {
      texts: 3
    }
  */
-function collectDOMStat(root) {}
+function collectDOMStat(root) {
+  const stat = {
+    tags: {},
+    classes: null,
+    texts: null,
+  };
+
+  for (const element of root.childNodes) {
+    let count = 0;
+    stat.tags.element.tagName = count;
+  }
+
+  return stat;
+}
+
+console.log(collectDOMStat('<div class="some-class-1"><b>привет!</b> <b class="some-class-1 some-class-2">loftschool</b></div>'));
 
 /*
  Задание 8 *:
